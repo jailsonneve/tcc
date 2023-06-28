@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- nome do usuário -->
+
+    <h1>Nome do usuário</h1>
+
+        <!-- exibi a foto de perfil -->
+
+        <img id="fotoPerfil" src="https://w7.pngwing.com/pngs/1000/665/png-transparent-computer-icons-profile-s-free-angle-sphere-profile-cliparts-free.png" alt="Foto de Perfil">
+    
+    <p>
+        <!-- inserir imagem como entrada -->
+    
+        <input id="uploadFoto" oninput="colocarFotoPerfil()" type="file" accept=".png,.jpeg,.jpg">
+    </p>
+
+    <p>
+        <!-- atualiza a foto de perfil do usuário -->
+
+        <button class="btnAtualiza">Atualizar Foto de Perfil</button>
+        
+        <!-- remove a foto de perfil do usuário-->
+        
+        <button id="btnRemove">Remover Foto de Perfil</button>        
+    </p>
+    
+    <h2>Sobre mim</h2>
+    <p>Olá! Bem-vindo ao meu site de perfil. Meu nome é [Nome do usuário] e sou apaixonado por [área de interesse]. Estou constantemente buscando aprender e aprimorar minhas habilidades nessa área. Este site é uma maneira de compartilhar um pouco mais sobre mim, minhas experiências e projetos.</p>
+    
+    <h2>Experiência</h2>
+    <ul>
+        <li>
+            <strong>[Nome da empresa/organização]:</strong> [Cargo/descrição do trabalho] (Data de início - Data de término)<br>
+            Responsabilidades e realizações relevantes.
+        </li>
+        <li>
+            <strong>[Nome da empresa/organização]:</strong> [Cargo/descrição do trabalho] (Data de início - Data de término)<br>
+            Responsabilidades e realizações relevantes.
+        </li>
+    </ul>
+    
+    <h2>Educação</h2>
+    <ul>
+        <li>
+            <strong>[Nome da instituição]:</strong> [Curso/Diploma] (Data de início - Data de término)<br>
+            Descrição do programa ou principais disciplinas.
+        </li>
+        <li>
+            <strong>[Nome da instituição]:</strong> [Curso/Diploma] (Data de início - Data de término)<br>
+            Descrição do programa ou principais disciplinas.
+        </li>
+    </ul>
+    
+    <h2>Habilidades</h2>
+    <ul>
+        <li>[Habilidade 1]</li>
+        <li>[Habilidade 2]</li>
+        <li>[Habilidade 3]</li>
+        <li>[Habilidade 4]</li>
+        <li>[Habilidade 5]</li>
+    </ul>
+    
+    <h2>Projetos</h2>
+    <ul>
+        <li>
+            <strong>[Nome do projeto]:</strong> [Breve descrição do projeto]<br>
+            Destaque das principais contribuições e resultados.
+        </li>
+        <li>
+            <strong>[Nome do projeto]:</strong> [Breve descrição do projeto]<br>
+            Destaque das principais contribuições e resultados.
+        </li>
+    </ul>
+    
+    <h2>Contato</h2>
+    <ul>
+        <li>E-mail: [Endereço de e-mail]</li>
+        <li>Twitter: 
+            <a href="[URL do perfil do Twitter]">@usuario_do_twitter</a>
+            <p>[botao para inserir alguma rede social]</p>
+        </li>
+    </ul>
+    
+    <h2>Blog</h2>
+    <ul>
+        <li>
+            <a href="[URL do blog]">Nome do blog</a>
+            <p onclick="inserirBlog()">[botao para inserir um blog]</p>
+        </li>
+    </ul>
+</body>
+</html>
+<script>
+    function colocarFotoPerfil() {
+        const leitorDeArquivos = new FileReader(),
+            
+            // tag image
+            
+            previaDaImagem = document.querySelector('#fotoPerfil'),
+            
+            // input file
+            
+            caminho = document.querySelector('#uploadFoto'),
+            
+            // botao atualiza
+            
+            btnAtualiza = document.querySelector('.btnAtualiza'),
+
+            btnRemova = document.querySelector("#btnRemove");
+        function removerFoto(){
+            previaDaImagem.src = "https://w7.pngwing.com/pngs/1000/665/png-transparent-computer-icons-profile-s-free-angle-sphere-profile-cliparts-free.png"
+        }
+        function leEAtualiza(){
+            //pega o arquivo enviado e guarda nesta variavel
+            
+            let imagemEnviada = caminho.files[0];
+
+            //Usa a função do objeto leitor de arquivos, que lê o arquivo, e consegue reaproveita-lo para usar o arquivo como uma URL
+            
+            leitorDeArquivos.readAsDataURL(imagemEnviada);
+            
+            //Após leitura da imagem (evento load), a função de callback define o valor do src da imagem de prévia com o valor do resultado da leitura do leitor de arquivos
+            
+            leitorDeArquivos.addEventListener('loadend', (eventoOcorrido) => {
+                
+                //define o caminho da imagem com o caminho criado pelo leitor de arquivos
+                
+                previaDaImagem.src = eventoOcorrido.target.result
+        })
+    }
+        //quando clica no boão atualizar
+    
+        btnAtualiza.addEventListener('click', function(){
+            leEAtualiza();
+            
+    })
+        btnRemova.addEventListener("click", (e)=>{
+            e.preventDefault();
+            removerFoto();
+        })
+    }
+    function inserirBlog(){
+        window.open("https:www.google.com")
+    }
+
+
+</script>

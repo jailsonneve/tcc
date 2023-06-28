@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<!--Titulo do site-->
+
+	<h1>Sistema Plantae</h1>
+	
+	<!--Barra de tarefas com as opções-->
+
+	<menu type="toolbar">
+        <select id="selecao1">
+            <option value="https://www.google.com">Frutíferas</option>
+            <option value="abacateiros">Abacateiros</option>
+            <option value="ameixeiras">Ameixeiras</option>
+            <option value="amoreiras">Amoreiras</option>
+            <option value="caquizeiros">Caquizeiros</option>
+            <option value="cerejeiras">Cerejeiras</option>
+            <option value="frutasfrescas">Frutas frescas</option>
+            <option value="goiabeiras">Goiabeiras</option>
+            <option value="jabuticabeiras">Jabuticabeiras</option>
+            <option value="pitangueiras">Pitangueiras</option>
+            <option value="pitaias">Pitaias</option>
+            <option value="pessegueiros">Pessegueiros</option>
+            <option value="mirtilooublueberry">Mirtilo ou Blueberry</option>
+            <option value="mangueiras">Mangueiras</option>
+            <option value="macieiras">Macieiras</option>
+            <option value="lichia">Lichias</option>
+        </select>
+        <select id="selecao2">
+            <option value="roseiras">Roseiras</option>
+            <option value="rosasarbustivas">Rosas Arbustivas</option>
+            <option value="rosastrepadeiras">Rosas Trepadeiras</option>
+        </select>
+
+        <!-- Botão para ir ao perfil -->
+
+        <a href="perfil.html"><button id="perfil"><img src="https://w7.pngwing.com/pngs/1000/665/png-transparent-computer-icons-profile-s-free-angle-sphere-profile-cliparts-free.png" style="max-width: 28px; max-height: 28px;"></button></a>
+	</menu>
+</body>
+</html>
+
+<!--Lida com a aparencia do site-->
+
+<style>
+	.ocultar{
+		display: none;
+	}
+	.exibir{
+		display: inline;
+	}
+	*{
+    margin: 0;
+    padding: 0; 
+    }
+    body {
+        background-image: linear-gradient(45deg, rgb(104, 5, 104) , rgb(204, 11, 11));
+        height: 100vh;
+        color:azure;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+	menu{
+        position: absolute;
+        background-color: rgb(92, 26, 75);
+        top: 22%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        padding: 20px;
+        color: white;
+        font-family: cursive;
+	}
+	h1{
+		position: absolute;
+        background-color: rgb(92, 26, 75);
+        top: 7%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        padding: 20px;
+        color: white;
+        font-family: cursive;
+	}
+    select{
+        border-radius: 10px;
+        padding: 10px;
+        font-family: cursive;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-size: medium;
+    }
+</style>
+
+<!--Lida com a execução das funções-->
+
+<script>
+
+//Troca a pagina conforme oque foi selecionado no select usando o valor do mesmo
+
+let selectEl = document.getElementsByTagName('select');
+selectEl[0].addEventListener('change', function() {
+    location.href=this.value;
+});
+
+</script>
