@@ -20,6 +20,7 @@
 		<label for="email">E-mail:</label><br>
 		<input type="email" id="email1" name="email" required autofocus><br><br>
 		<input type="submit" value="Cadastrar" class="btc">
+		<input type="button" value="Já possui login?" class="btl" onclick="MostrarPaginaLogin()">
 	</form>
 	<!-- Título do site Login-->
 
@@ -38,6 +39,15 @@
 </body>
 </html>
 <script>
+
+	//Mostra a pagina login caso o usuário ja esteja cadastrado
+
+	function MostrarPaginaLogin() {
+		frc.className = "ocultar"
+		abc.className = "ocultar"
+		frl.className = "exibir"
+		abl.className = "exibir"
+	}
 
 	// Obter elementos do formulário de cadastro e do formulário de login
 
@@ -140,8 +150,8 @@
     form {
         position: absolute;
         background-color: rgb(92, 26, 75);
-        top: 47%;
-        left: 47%;
+        top: 47vh;
+        left: 47vw;
         transform: translate(-50%, -50%);
         border-radius: 15px;
         padding: 20px;
@@ -149,8 +159,8 @@
     h2 {
         position: absolute;
         background-color: rgb(92, 26, 75);
-        top: 20%;
-        left: 47%;
+        top: 20vh;
+        left: 47vw;
         transform: translate(-50%, -50%);
         border-radius: 30px;
         padding: 40px;
