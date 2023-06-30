@@ -84,12 +84,9 @@
 
 			const novoUsuario= [userc, senhac, emailc]
 
-			// Fazer o menu de cadrastro sumir e o menu de login aparecer
+			// Volta a pagina inicial
 
-			frc.className = "ocultar"
-			abc.className = "ocultar"
-			frl.className = "exibir"
-			abl.className = "exibir"
+			location.replace("index.html")
 
 			// Lidar com o envio do formulário de login
 
@@ -100,8 +97,6 @@
 
 				let userl = document.querySelector('input[name="username2"]').value
 				let senhal = document.querySelector('input[name="password2"]').value
-
-				console.log(userc,senhac)
 
 				// Comparando usuário e senha para ver se está correto
 
