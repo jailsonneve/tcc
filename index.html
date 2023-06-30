@@ -1,121 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        p {
+            color: #666;
+        }
+    </style>
 </head>
 <body>
+    
+    <!-- nome do usuário -->
 
-	<!--Titulo do site-->
+    <h1>Nome do usuário</h1>
 
-	<h1>Sistema Plantae</h1>
-	
-	<!--Barra de tarefas com as opções-->
+        <!-- exibi a foto de perfil -->
 
-	<menu type="toolbar">
-        <select id="selecao1">
-            <option value="https://www.google.com">Frutíferas</option>
-            <option value="abacateiros">Abacateiros</option>
-            <option value="ameixeiras">Ameixeiras</option>
-            <option value="amoreiras">Amoreiras</option>
-            <option value="caquizeiros">Caquizeiros</option>
-            <option value="cerejeiras">Cerejeiras</option>
-            <option value="frutasfrescas">Frutas frescas</option>
-            <option value="goiabeiras">Goiabeiras</option>
-            <option value="jabuticabeiras">Jabuticabeiras</option>
-            <option value="pitangueiras">Pitangueiras</option>
-            <option value="pitaias">Pitaias</option>
-            <option value="pessegueiros">Pessegueiros</option>
-            <option value="mirtilooublueberry">Mirtilo ou Blueberry</option>
-            <option value="mangueiras">Mangueiras</option>
-            <option value="macieiras">Macieiras</option>
-            <option value="lichia">Lichias</option>
-        </select>
-        <select id="selecao2">
-            <option value="roseiras">Roseiras</option>
-            <option value="rosasarbustivas">Rosas Arbustivas</option>
-            <option value="rosastrepadeiras">Rosas Trepadeiras</option>
-        </select>
+        <img id="fotoPerfil" src="https://w7.pngwing.com/pngs/1000/665/png-transparent-computer-icons-profile-s-free-angle-sphere-profile-cliparts-free.png" alt="Foto de Perfil">
+    
+    <p>
+        <!-- inserir imagem como entrada -->
+    
+        <input id="uploadFoto" oninput="colocarFotoPerfil()" type="file" accept=".png,.jpeg,.jpg">
+    </p>
 
-        <a href="Cadastro e Login.html"><button class="btPaginaCadastro">Cadastre-se</button></a>
+    <p>
+        <!-- atualiza a foto de perfil do usuário -->
 
-        <!-- Botão para ir ao perfil -->
+        <button class="btnAtualiza">Atualizar Foto de Perfil</button>
+        
+        <!-- remove a foto de perfil do usuário-->
+        
+        <button id="btnRemove">Remover Foto de Perfil</button>
+        
+        <a href="pagina_inicial.html"><button>Voltar para a Pagina Inicial</button></a>
 
-        <a href="perfil.html"><button id="perfil"><img src="https://w7.pngwing.com/pngs/1000/665/png-transparent-computer-icons-profile-s-free-angle-sphere-profile-cliparts-free.png" style="max-width: 28px; max-height: 28px;"></button></a>
-	</menu>
+    </p>
+    
+    <h2>Sobre mim</h2>
+    <p>Olá! Bem-vindo ao meu site de perfil. Meu nome é [Nome do usuário] e sou apaixonado por [área de interesse]. Estou constantemente buscando aprender e aprimorar minhas habilidades nessa área. Este site é uma maneira de compartilhar um pouco mais sobre mim, minhas experiências e projetos.</p>
+    
+    <h2>Experiência</h2>
+    <ul>
+        <li>
+            <strong>[Nome da empresa/organização]:</strong> [Cargo/descrição do trabalho] (Data de início - Data de término)<br>
+            Responsabilidades e realizações relevantes.
+        </li>
+        <li>
+            <strong>[Nome da empresa/organização]:</strong> [Cargo/descrição do trabalho] (Data de início - Data de término)<br>
+            Responsabilidades e realizações relevantes.
+        </li>
+    </ul>
+    
+    <h2>Educação</h2>
+    <ul>
+        <li>
+            <strong>[Nome da instituição]:</strong> [Curso/Diploma] (Data de início - Data de término)<br>
+            Descrição do programa ou principais disciplinas.
+        </li>
+        <li>
+            <strong>[Nome da instituição]:</strong> [Curso/Diploma] (Data de início - Data de término)<br>
+            Descrição do programa ou principais disciplinas.
+        </li>
+    </ul>
+    
+    <h2>Habilidades</h2>
+    <ul>
+        <li>[Habilidade 1]</li>
+        <li>[Habilidade 2]</li>
+        <li>[Habilidade 3]</li>
+        <li>[Habilidade 4]</li>
+        <li>[Habilidade 5]</li>
+    </ul>
+    
+    <h2>Projetos</h2>
+    <ul>
+        <li>
+            <strong>[Nome do projeto]:</strong> [Breve descrição do projeto]<br>
+            Destaque das principais contribuições e resultados.
+        </li>
+        <li>
+            <strong>[Nome do projeto]:</strong> [Breve descrição do projeto]<br>
+            Destaque das principais contribuições e resultados.
+        </li>
+    </ul>
+    
+    <h2>Contato</h2>
+    <ul>
+        <li>E-mail: [Endereço de e-mail]</li>
+        <li>Twitter: 
+            <a href="[URL do perfil do Twitter]">@usuario_do_twitter</a>
+            <p>[botao para inserir alguma rede social]</p>
+        </li>
+    </ul>
+    
+    <h2>Blog</h2>
+    <ul>
+        <li>
+            <a href="[URL do blog]">Nome do blog</a>
+            <p onclick="inserirBlog()">[botao para inserir um blog]</p>
+        </li>
+    </ul>
 </body>
 </html>
-
-<!--Lida com a aparencia do site-->
-
-<style>
-	.ocultar{
-		display: none;
-	}
-	.exibir{
-		display: inline;
-	}
-	*{
-    margin: 0;
-    padding: 0; 
-    }
-    body {
-        background-image: linear-gradient(45deg, rgb(104, 5, 104) , rgb(204, 11, 11));
-        height: 100vh;
-        color:azure;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-    }
-	menu{
-        position: absolute;
-        background-color: rgb(92, 26, 75);
-        top: 25vh;
-        left: 47vw;
-        transform: translate(-50%, -50%);
-        border-radius: 15px;
-        padding: 10px;
-        color: white;
-        font-family: cursive;
-	}
-	h1{
-		position: absolute;
-        background-color: rgb(92, 26, 75);
-        top: 7vh;
-        left: 47vw;
-        transform: translate(-50%, -50%);
-        border-radius: 15px;
-        padding: 20px;
-        color: white;
-        font-family: cursive;
-	}
-    select{
-        border-radius: 10px;
-        padding: 10px;
-        font-family: cursive;
-        background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
-        font-size: medium;
-    }
-    .btPaginaCadastro{
-        border-radius: 10px;
-        padding: 10px;
-        font-size: 15px;
-        background-color: rgb(92, 26, 75);
-        color: white;
-        font-family: cursive;
-    }
-</style>
-
-<!--Lida com a execução das funções-->
-
 <script>
+    function colocarFotoPerfil() {
+        const leitorDeArquivos = new FileReader(),
+            
+            // tag image
+            
+            previaDaImagem = document.querySelector('#fotoPerfil'),
+            
+            // input file
+            
+            caminho = document.querySelector('#uploadFoto'),
+            
+            // botao atualiza
+            
+            btnAtualiza = document.querySelector('.btnAtualiza'),
 
-//Troca a pagina conforme oque foi selecionado no select usando o valor do mesmo
+            btnRemova = document.querySelector("#btnRemove");
+        function removerFoto(){
+            previaDaImagem.src = "https://w7.pngwing.com/pngs/1000/665/png-transparent-computer-icons-profile-s-free-angle-sphere-profile-cliparts-free.png"
+        }
+        function leEAtualiza(){
+            //pega o arquivo enviado e guarda nesta variavel
+            
+            let imagemEnviada = caminho.files[0];
 
-let selectEl = document.getElementsByTagName('select');
-selectEl[0].addEventListener('change', function() {
-    location.href=this.value;
-});
+            //Usa a função do objeto leitor de arquivos, que lê o arquivo, e consegue reaproveita-lo para usar o arquivo como uma URL
+            
+            leitorDeArquivos.readAsDataURL(imagemEnviada);
+            
+            //Após leitura da imagem (evento load), a função de callback define o valor do src da imagem de prévia com o valor do resultado da leitura do leitor de arquivos
+            
+            leitorDeArquivos.addEventListener('loadend', (eventoOcorrido) => {
+                
+                //define o caminho da imagem com o caminho criado pelo leitor de arquivos
+                
+                previaDaImagem.src = eventoOcorrido.target.result
+        })
+    }
+        //quando clica no boão atualizar
+    
+        btnAtualiza.addEventListener('click', function(){
+            leEAtualiza();
+            
+    })
+        btnRemova.addEventListener("click", (e)=>{
+            e.preventDefault();
+            removerFoto();
+        })
+    }
+    function inserirBlog(){
+        window.open("https:www.google.com")
+    }
+
 
 </script>
