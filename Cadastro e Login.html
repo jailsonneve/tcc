@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img id="fundoIMG" src="https://www.petz.com.br/blog/wp-content/uploads/2022/08/plantas-trepadeiras-1.jpg">
+	<img id="fundoIMG" src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffh260%2Fbackground%2F20201124%2Fpngtree-green-watercolor-plant-background-image_499339.jpg&tbnid=fBEMqu9d-etnDM&vet=12ahUKEwj369iWtPv_AhWtqZUCHWtTCdwQMygCegUIARDVAQ..i&imgrefurl=https%3A%2F%2Fpt.pngtree.com%2Ffree-backgrounds-photos%2Ffundo-verde-de-plantas&docid=9s00K7iWynaxBM&w=365&h=261&q=imagens%20para%20colocar%20de%20tela%20de%20fundo%20para%20sites%20de%20plantas&ved=2ahUKEwj369iWtPv_AhWtqZUCHWtTCdwQMygCegUIARDVAQ">
 	<!-- Título do site cadastro-->
 
 	<h2 class="exibir" id="abertc">Cadastro</h2>
 
 	<!-- Formulário cadastro-->
 
-	<form class="exibir">
+	<form class="exibir" id="cadastro">
 		<label for="username">Nome de Usuário:</label><br>
 		<input type="text" id="username1" name="username" required autofocus><br>
 		<label for="password">Senha:</label><br>
@@ -29,41 +29,17 @@
 
 	<!-- Formulário login-->
 
-	<form class="ocultar">
+	<form class="ocultar" id="login">
 		<label for="username">Nome de Usuário:</label><br>
 		<input type="text" id="username2" name="username2" required autofocus><br>
 		<label for="password">Senha:</label><br>
 		<input type="password" id="password2" name="password2" required autofocus><br>
-		<input type="submit" id="btl" name="btl" value="Entrar" class="btl">
-		<input type="button" value="Voltar" class="btl" onclick="MostrarPaginaCadastro()">
+		<input type="submit" id="btl" name="btl" value="Entrar" class="btl2">
+		<input type="button" value="Voltar" class="btl2" onclick="MostrarPaginaCadastro()">
 	</form>
 
 </body>
 </html>
-
-<script type="module">
-	// Import the functions you need from the SDKs you need
-	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-	import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-	// TODO: Add SDKs for Firebase products that you want to use
-	// https://firebase.google.com/docs/web/setup#available-libraries
-  
-	// Your web app's Firebase configuration
-	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	const firebaseConfig = {
-	  apiKey: "AIzaSyB-9TpBmekq2vMLRPq4PvDTHoE4j-wrgrc",
-	  authDomain: "teste1-bf1b5.firebaseapp.com",
-	  projectId: "teste1-bf1b5",
-	  storageBucket: "teste1-bf1b5.appspot.com",
-	  messagingSenderId: "650621116993",
-	  appId: "1:650621116993:web:f1e2ba027a89833d301cc0",
-	  measurementId: "G-46ZTXMJX87"
-	};
-  
-	// Initialize Firebase
-	const app = initializeApp(firebaseConfig);
-	const analytics = getAnalytics(app);
-</script>	
 
 	<!-- Lida com as funções do site -->
 
@@ -163,7 +139,7 @@ let body = document.querySelector("#fundoIMG")
 let ale = Math.floor(Math.random()*100) + 1
 
 if(ale!=1){
-    body.src = "https://www.petz.com.br/blog/wp-content/uploads/2022/08/plantas-trepadeiras-1.jpg"
+    body.src = "https://img.freepik.com/vetores-gratis/fundo-de-desenho-floral-linear_23-2149130877.jpg?w=2000"
 }else{
     body.src = caminho_img
 }
@@ -172,30 +148,53 @@ if(ale!=1){
 	<!-- Lida com a aparencia do site-->
 	
 <style>
-    .ocultar{
+	.ocultar{
     	display: none;
     }
     .exibir{
         display: inline;
     }
+	@media only screen and (max-width:513px){
+		.btl{
+			position: relative;
+			top: 5px;
+			border-radius: 10px;
+			padding: 10px;
+			font-size: 15px;
+			background-color: rgba(50, 196, 31, 0.5);
+			color: black;
+			font-family: cursive;
+		}
+	}
     *{
-	margin: 0;
-	padding: 0; 
+    margin: 0;
+    padding: 0; 
     }
-    body {
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100vh;
-	color:black;
-	font-family: Arial, Helvetica, sans-serif;
-	text-align: center;
-	font-family: cursive;
+	body {
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100vh;
+		color:black;
+		font-family: Arial, Helvetica, sans-serif;
+		text-align: center;
+		font-family: cursive;
     }
-    form {
+    #cadastro {
         position: absolute;
         background-color: rgba(50, 196, 31, 0.5);
-	color: black;
+		color: black;
         top: 60vh;
+        left: 47vw;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        padding: 20px;
+		font-family: cursive;
+    }
+	#login {
+        position: absolute;
+        background-color: rgba(50, 196, 31, 0.5);
+		color: black;
+        top: 50vh;
         left: 47vw;
         transform: translate(-50%, -50%);
         border-radius: 15px;
@@ -204,9 +203,9 @@ if(ale!=1){
     }
     h2 {
         position: absolute;
-	background-color: rgba(50, 196, 31, 0.5);
-	color: black;        
-	top: 15vh;
+		background-color: rgba(50, 196, 31, 0.5);
+		color: black;        
+		top: 15vh;
         left: 47vw;
         transform: translate(-50%, -50%);
         border-radius: 30px;
@@ -217,8 +216,8 @@ if(ale!=1){
         border-radius: 10px;
         padding: 10px;
         font-size: 15px;
-	background-color: rgba(50, 196, 31, 0.5);
-	color: black;        
+		background-color: rgba(50, 196, 31, 0.5);
+		color: black;        
         font-family: cursive;
     }
 	.btl{
@@ -226,11 +225,21 @@ if(ale!=1){
         padding: 10px;
         font-size: 15px;
         background-color: rgba(50, 196, 31, 0.5);
-	color: black;
+		color: black;
         font-family: cursive;
     }
 	#fundoIMG{
             height: 100vh;
             width: 100vw;
         }
+	.btl2{
+		position: relative;
+		top: 10px;
+		border-radius: 10px;
+		padding: 10px;
+		font-size: 15px;
+		background-color: rgba(50, 196, 31, 0.5);
+		color: black;
+		font-family: cursive;
+	}
 </style>
